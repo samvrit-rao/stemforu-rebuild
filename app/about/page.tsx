@@ -72,8 +72,7 @@ export default function About() {
                 Bronx Oncology Living Daily (BOLD)
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                A Columbia-affiliated program dedicated to supporting cancer patients and survivors
-                in the Bronx community through education, resources, and compassionate care initiatives.
+                Supporting cancer patients and survivors in the Bronx through education and resources.
               </p>
             </div>
 
@@ -83,8 +82,7 @@ export default function About() {
                 Columbia Global Research and Consulting
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                A student-led consulting organization providing pro-bono research and strategic
-                solutions to nonprofits and social enterprises, driving meaningful global impact.
+                Pro-bono consulting for nonprofits and social enterprises.
               </p>
             </div>
 
@@ -94,8 +92,7 @@ export default function About() {
                 Columbia Bhangra
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Columbia&apos;s premier South Asian dance team, celebrating Punjabi culture through
-                high-energy performances and fostering cultural awareness across campus.
+                Columbia&apos;s competitive Bhangra dance team.
               </p>
             </div>
 
@@ -105,8 +102,7 @@ export default function About() {
                 Columbia Synapse
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                A neuroscience-focused organization connecting students passionate about brain science,
-                mental health, and cutting-edge research in cognitive neuroscience.
+                Student organization focused on neuroscience and mental health research.
               </p>
             </div>
           </div>
