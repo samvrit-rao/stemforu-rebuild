@@ -95,13 +95,33 @@ export default function SummerCamp() {
               <li>Mr. Mahesh Seshan (Technical Director, Titan.ium Platform LLC)</li>
             </ul>
 
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-8 mb-6 font-heading">Program Highlights</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/IMG_9616.jpg"
+                  alt="2024 Summer Camp Activities"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/IMG_9637.jpg"
+                  alt="2024 Summer Camp Presentations"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-8 mb-6 font-heading">Results & Recognition</h3>
             <p className="text-gray-700 mb-8 text-xl font-semibold font-heading">3M Virginia State Merit Award Winners:</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {/* 2023 Winner */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-teal-200">
-                <div className="relative h-80">
+                <div className="relative h-[500px]">
                   <Image
                     src="/MS.jpeg"
                     alt="Meha Seshan - 2023 Winner"
@@ -113,7 +133,7 @@ export default function SummerCamp() {
 
               {/* 2024 Winner */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-teal-200">
-                <div className="relative h-80">
+                <div className="relative h-[500px]">
                   <Image
                     src="/AD.jpeg"
                     alt="Aneruddha Das - 2024 Winner"
@@ -134,7 +154,7 @@ export default function SummerCamp() {
             2023 – Summer of Innovation
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 mb-12">
             <p className="text-lg text-gray-600 leading-relaxed">
               An engaging virtual camp focusing on the fundamentals of scientific principles,
               engineering design, and data collection and analysis.
@@ -152,6 +172,26 @@ export default function SummerCamp() {
                   and data collection/analysis
                 </li>
               </ul>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-8 mb-6 font-heading">Program Highlights</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/IMG_7071.jpg"
+                  alt="2023 Summer Camp Activities"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/IMG_7085.jpg"
+                  alt="2023 Summer Camp Presentations"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
