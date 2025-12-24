@@ -52,8 +52,69 @@ export default function About() {
         </div>
       </section>
 
-      {/* Publications */}
+      {/* Columbia Engagement */}
       <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 font-display">
+              Columbia University Engagement
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Actively participating in various Columbia organizations that extend
+              the mission of service, research, and cultural enrichment.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Bronx BOLD */}
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-2xl border-2 border-teal-100 hover:border-teal-300 transition-all hover:shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                Bronx Oncology Living Daily (BOLD)
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                A Columbia-affiliated program dedicated to supporting cancer patients and survivors
+                in the Bronx community through education, resources, and compassionate care initiatives.
+              </p>
+            </div>
+
+            {/* Columbia GRC */}
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border-2 border-blue-100 hover:border-blue-300 transition-all hover:shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                Columbia Global Research and Consulting
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                A student-led consulting organization providing pro-bono research and strategic
+                solutions to nonprofits and social enterprises, driving meaningful global impact.
+              </p>
+            </div>
+
+            {/* Columbia Bhangra */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border-2 border-purple-100 hover:border-purple-300 transition-all hover:shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                Columbia Bhangra
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Columbia&apos;s premier South Asian dance team, celebrating Punjabi culture through
+                high-energy performances and fostering cultural awareness across campus.
+              </p>
+            </div>
+
+            {/* Columbia Synapse */}
+            <div className="bg-gradient-to-br from-pink-50 to-teal-50 p-8 rounded-2xl border-2 border-pink-100 hover:border-pink-300 transition-all hover:shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                Columbia Synapse
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                A neuroscience-focused organization connecting students passionate about brain science,
+                mental health, and cutting-edge research in cognitive neuroscience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl font-black mb-8 text-gray-900 font-display">Recent Research Publications</h2>
           <div className="space-y-6">
@@ -87,7 +148,7 @@ export default function About() {
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl font-black mb-8 text-gray-900 font-display">Awards & Recognition</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -123,7 +184,7 @@ export default function About() {
       </section>
 
       {/* Projects */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl font-black mb-12 text-gray-900 font-display">Major Projects</h2>
           <div className="space-y-12">
