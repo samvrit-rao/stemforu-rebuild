@@ -24,9 +24,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
-        heading: ['var(--font-ibm)'],
-        display: ['var(--font-space)'],
-        logo: ['var(--font-outfit)'],
+        heading: ['var(--font-dm)'],
+        display: ['var(--font-poppins)'],
+        logo: ['var(--font-sora)'],
       },
     },
   },

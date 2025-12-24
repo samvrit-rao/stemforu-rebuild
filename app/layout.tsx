@@ -1,24 +1,24 @@
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Sans, Space_Grotesk, Outfit } from 'next/font/google'
+import { Inter, DM_Sans, Poppins, Sora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const ibmPlex = IBM_Plex_Sans({
+const dmSans = DM_Sans({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-ibm'
+  variable: '--font-dm'
 })
-const spaceGrotesk = Space_Grotesk({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-space'
-})
-const outfit = Outfit({
+const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-outfit'
+  variable: '--font-poppins'
+})
+const sora = Sora({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  variable: '--font-sora'
 })
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${ibmPlex.variable} ${spaceGrotesk.variable} ${outfit.variable} font-sans`}>
+      <body className={`${inter.variable} ${dmSans.variable} ${poppins.variable} ${sora.variable} font-sans`}>
         <Header />
         <main className="min-h-screen">
           {children}
