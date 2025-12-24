@@ -16,41 +16,8 @@ export default function SummerCamp() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-black mb-12 text-gray-900 text-center font-display">Program Highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/IMG_9637.jpg"
-                alt="Students presenting at poster competition"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/IMG_7071.jpg"
-                alt="Student presenting research to judge"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/IMG_9616.jpg"
-                alt="Student with poster presentation"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 2024 Program */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-gray-900 font-display">
             2024 – Summer of Innovation
@@ -148,7 +115,7 @@ export default function SummerCamp() {
       </section>
 
       {/* 2023 Program */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-gray-900 font-display">
             2023 – Summer of Innovation
@@ -160,7 +127,7 @@ export default function SummerCamp() {
               engineering design, and data collection and analysis.
             </p>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-heading">Program Details</h3>
               <ul className="space-y-3">
                 <li className="text-lg text-gray-700">
@@ -198,7 +165,7 @@ export default function SummerCamp() {
       </section>
 
       {/* 2022 Program */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-gray-900 font-display">
             2022 – Innovative Concepts
@@ -232,7 +199,7 @@ export default function SummerCamp() {
       </section>
 
       {/* 2021 Program */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-gray-900 font-display">
             2021 – Science Talks
