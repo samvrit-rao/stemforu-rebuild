@@ -13,21 +13,17 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-teal-50 via-blue-50 to-purple-50">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      <section className="relative py-32 overflow-hidden">
         <BackgroundSlideshow images={slideshowImages} />
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center">
-            <div className="inline-block mb-6">
-              <span className="inline-block animate-bounce text-4xl mb-4">🚀</span>
-            </div>
             <h1 className="text-7xl md:text-8xl lg:text-9xl font-black mb-6 font-logo bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl leading-tight">
               STEMForU
             </h1>
             <p className="text-2xl md:text-4xl mb-6 text-gray-900 font-display font-bold drop-shadow-md">
               STEM Excellence for Tomorrow
             </p>
-            <p className="text-lg md:text-xl mb-10 leading-relaxed text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-10 leading-relaxed text-gray-800 max-w-3xl mx-auto font-semibold drop-shadow-sm">
               Inspire and empower elementary and middle school students, especially those from
               underrepresented communities, by providing them with a platform to ignite and nurture
               a strong interest in STEM.

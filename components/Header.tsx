@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <header className="glass-effect sticky top-0 z-50 shadow-lg backdrop-blur-xl">
@@ -63,12 +64,76 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden text-gray-700 hover:text-primary-600 transition-colors">
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button
+            className="md:hidden text-gray-700 hover:text-teal-600 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-2">
+            <Link
+              href="/"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/mission"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Mission
+            </Link>
+            <Link
+              href="/blogs"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/news"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              News
+            </Link>
+            <Link
+              href="/resources"
+              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Resources
+            </Link>
+            <Link
+              href="/summer-camp"
+              className="block bg-teal-600 text-white px-4 py-2 font-semibold hover:bg-teal-700 transition-colors font-heading rounded-lg text-center"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Summer Camp
+            </Link>
+          </div>
+        )}
       </nav>
     </header>
   )
