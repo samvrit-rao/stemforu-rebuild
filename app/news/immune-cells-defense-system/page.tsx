@@ -18,7 +18,7 @@ export default function ImmuneCellsArticle() {
       <section className="bg-white py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Immune Cells' Interesting Defense System
+            Immune Cells&apos; Interesting Defense System
           </h1>
           <p className="text-gray-600">Current Science News</p>
         </div>
@@ -43,10 +43,10 @@ export default function ImmuneCellsArticle() {
             </p>
 
             <p className="text-gray-700 mb-4">
-              The key to this defense system's effectiveness lies in how it targets bacterial lipids
+              The key to this defense system&apos;s effectiveness lies in how it targets bacterial lipids
               while leaving host cells unharmed. This selective targeting is crucial, as it allows the
               immune system to eliminate bacterial threats without causing collateral damage to the
-              body's own tissues.
+              body&apos;s own tissues.
             </p>
 
             <p className="text-gray-700 mb-4">

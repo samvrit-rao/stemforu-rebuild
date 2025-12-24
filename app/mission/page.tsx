@@ -16,7 +16,7 @@ export default function Mission() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p>
-              STEMForU's mission is to inspire and empower elementary and middle-school students,
+              STEMForU&apos;s mission is to inspire and empower elementary and middle-school students,
               especially those from underrepresented communities. We emphasize innovative learning,
               hands-on experimentation and the importance of science, technology, engineering and
               mathematics.

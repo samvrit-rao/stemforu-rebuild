@@ -18,7 +18,7 @@ export default function HIVVaccineArticle() {
       <section className="bg-white py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why we don't have an HIV Vaccine yet
+            Why we don&apos;t have an HIV Vaccine yet
           </h1>
           <p className="text-gray-600">Current Science News</p>
         </div>
@@ -36,7 +36,7 @@ export default function HIVVaccineArticle() {
             </p>
 
             <p className="text-gray-700 mb-4">
-              One of the primary obstacles is HIV's ability to integrate its genetic code directly into
+              One of the primary obstacles is HIV&apos;s ability to integrate its genetic code directly into
               T-cells, a crucial component of our immune system. Once integrated, the virus can remain
               dormant in these cells for extended periods, creating long-term reservoirs that are
               extremely difficult to eliminate. This means that even if a vaccine could prevent new

@@ -43,7 +43,7 @@ export default function About() {
                   </p>
                   <p>
                     Outside of science, Samvrit enjoys reading and playing cricket, football and basketball
-                    with friends, bringing a well-rounded perspective to the organization's mission.
+                    with friends, bringing a well-rounded perspective to the organization&apos;s mission.
                   </p>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function About() {
               <p className="text-gray-800 text-lg font-semibold">Extemporaneous Speech Top 10 at the GMU National Tournament (2023)</p>
             </div>
             <div className="border-l-4 border-teal-600 pl-4 py-2">
-              <p className="text-gray-800 text-lg font-semibold">America's Top 10 Young Scientists Recognition by 3M (2020)</p>
+              <p className="text-gray-800 text-lg font-semibold">America&apos;s Top 10 Young Scientists Recognition by 3M (2020)</p>
             </div>
             <div className="border-l-4 border-teal-600 pl-4 py-2">
               <p className="text-gray-800 text-lg font-semibold">U.S. National Champion in the International Geography Bee (Junior Varsity, 2019)</p>
