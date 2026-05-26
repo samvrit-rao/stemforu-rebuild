@@ -2,7 +2,7 @@ backend:
   name: github
   repo: samvrit-rao/stemforu-rebuild
   branch: main
-  base_url: https://stemforu-rebuild.vercel.app  # UPDATE THIS to your actual Vercel domain
+  base_url: https://stemforu.org
   auth_endpoint: /api/auth
   open_authoring: true
 
