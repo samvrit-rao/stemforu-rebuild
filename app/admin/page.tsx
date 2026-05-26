@@ -23,7 +23,7 @@ export default function AdminPage() {
             name: 'github',
             repo: 'samvrit-rao/stemforu-rebuild',
             branch: 'main',
-            base_url: 'https://stemforu.org',
+            base_url: 'https://www.stemforu.org',
             auth_endpoint: '/api/auth',
             open_authoring: true,
           },
