@@ -25,9 +25,7 @@ export default function AdminPage() {
             branch: 'main',
             base_url: 'https://www.stemforu.org',
             auth_endpoint: '/api/auth',
-            open_authoring: true,
           },
-          publish_mode: 'editorial_workflow',
           media_folder: 'public/images/uploads',
           public_folder: '/images/uploads',
           collections: [
