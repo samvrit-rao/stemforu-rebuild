@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import Script from 'next/script'
 
 export default function AdminPage() {
   useEffect(() => {
@@ -11,15 +10,67 @@ export default function AdminPage() {
     if (header) header.style.display = 'none'
     if (footer) footer.style.display = 'none'
 
+    // Set config before loading the CMS script
+    ;(window as any).CMS_MANUAL_INIT = true
+
+    const script = document.createElement('script')
+    script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js'
+    script.onload = () => {
+      const CMS = (window as any).CMS
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'samvrit-rao/stemforu-rebuild',
+            branch: 'main',
+            base_url: 'https://stemforu.org',
+            auth_endpoint: '/api/auth',
+            open_authoring: true,
+          },
+          publish_mode: 'editorial_workflow',
+          media_folder: 'public/images/uploads',
+          public_folder: '/images/uploads',
+          collections: [
+            {
+              name: 'blogs',
+              label: 'Blog Posts',
+              folder: 'content/blogs',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' },
+                { label: 'Excerpt', name: 'excerpt', widget: 'text' },
+                { label: 'Featured Image', name: 'image', widget: 'image' },
+                { label: 'Author', name: 'author', widget: 'string', default: 'STEMForU Team' },
+                { label: 'Body', name: 'body', widget: 'markdown' },
+              ],
+            },
+            {
+              name: 'news',
+              label: 'News Articles',
+              folder: 'content/news',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Excerpt', name: 'excerpt', widget: 'text' },
+                { label: 'Featured Image', name: 'image', widget: 'image' },
+                { label: 'Author', name: 'author', widget: 'string', default: 'STEMForU Team' },
+                { label: 'Body', name: 'body', widget: 'markdown' },
+              ],
+            },
+          ],
+        },
+      })
+    }
+    document.body.appendChild(script)
+
     return () => {
       if (header) header.style.display = ''
       if (footer) footer.style.display = ''
     }
   }, [])
 
-  return (
-    <>
-      <Script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" />
-    </>
-  )
+  return <div id="nc-root" />
 }
