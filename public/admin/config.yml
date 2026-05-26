@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: samvrit-rao/stemforu-rebuild
+  branch: main
+  open_authoring: true  # Allows contributors to submit PRs without direct repo access
+
+publish_mode: editorial_workflow  # Creates a PR instead of committing directly
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: blogs
+    label: Blog Posts
+    folder: content/blogs
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Author", name: "author", widget: "string", default: "STEMForU Team" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: news
+    label: News Articles
+    folder: content/news
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Author", name: "author", widget: "string", default: "STEMForU Team" }
+      - { label: "Body", name: "body", widget: "markdown" }

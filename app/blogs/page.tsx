@@ -1,26 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
-const blogPosts = [
-  {
-    id: 'tardigrades',
-    title: 'Tardigrades – A glimpse into the future',
-    date: '6/14/2022',
-    excerpt: 'Explore the fascinating world of tardigrades and how these resilient creatures might hold clues to life on other planets.',
-    slug: 'tardigrades-glimpse-future',
-    image: '/rover.jpg'
-  },
-  {
-    id: 'covid-variants',
-    title: 'A detailed analysis of COVID-19 variants',
-    date: '2022',
-    excerpt: 'An in-depth look at the various COVID-19 variants and their impact on global health.',
-    slug: 'covid-19-variants-analysis',
-    image: '/quarantine.jpg'
-  }
-]
+import { getAllPosts } from '@/lib/markdown'
 
 export default function Blogs() {
+  const blogPosts = getAllPosts('blogs')
+
   return (
     <div className="bg-gray-50">
       {/* Page Header */}
@@ -36,7 +20,7 @@ export default function Blogs() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+              <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                 {/* Thumbnail image */}
                 <div className="h-48 relative overflow-hidden">
                   <Image
@@ -48,7 +32,7 @@ export default function Blogs() {
                 </div>
 
                 <div className="p-6">
-                  <p className="text-sm text-gray-600 mb-2">{post.date}</p>
+                  {post.date && <p className="text-sm text-gray-600 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>}
                   <h2 className="text-2xl font-bold text-gray-900 mb-3">{post.title}</h2>
                   <p className="text-gray-700 mb-4">{post.excerpt}</p>
                   <Link
