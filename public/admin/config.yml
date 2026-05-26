@@ -2,7 +2,9 @@ backend:
   name: github
   repo: samvrit-rao/stemforu-rebuild
   branch: main
-  open_authoring: true  # Allows contributors to submit PRs without direct repo access
+  base_url: https://stemforu-rebuild.vercel.app  # UPDATE THIS to your actual Vercel domain
+  auth_endpoint: /api/auth
+  open_authoring: true
 
 publish_mode: editorial_workflow  # Creates a PR instead of committing directly
 
