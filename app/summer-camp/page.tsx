@@ -3,6 +3,26 @@ import Image from 'next/image'
 export default function SummerCamp() {
   return (
     <div className="bg-white">
+      {/* Registration Form */}
+      <section className="bg-gradient-to-r from-primary-600 to-primary-800 py-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6 font-heading">
+            Register Now
+          </h2>
+          <div className="flex justify-center">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSe9Z_sji7ehQ4tkzE4e6Ol5UdHlxGY61iG-oplG8HWlXmeB2A/viewform?embedded=true"
+              width="640"
+              height="1979"
+              frameBorder="0"
+              className="bg-white rounded-lg max-w-full"
+            >
+              Loading...
+            </iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Page Header */}
       <section className="bg-white py-20 border-b">
         <div className="container mx-auto px-4 max-w-4xl text-center">
