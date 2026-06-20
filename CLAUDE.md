@@ -4,115 +4,77 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the STEMForU website - a modern, responsive Next.js application built to inspire and empower elementary and middle school students, especially those from underrepresented communities, through STEM education.
+STEMForU website — a Next.js 14 (App Router) site for inspiring elementary and middle school students through STEM education.
 
-**Tech Stack:**
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Google Fonts (Inter, DM Sans, Poppins, Sora)
+**Tech Stack:** Next.js 14 · TypeScript · Tailwind CSS · gray-matter + remark (Markdown) · Decap CMS
 
 ## Development Commands
 
 ```bash
-# Development
-npm install          # Install dependencies
-npm run dev         # Start development server on http://localhost:3000
-
-# Production
-npm run build       # Build for production
-npm start           # Start production server
-
-# Code Quality
-npm run lint        # Run ESLint
+npm install       # Install dependencies
+npm run dev       # Start dev server at http://localhost:3000
+npm run build     # Build for production
+npm run lint      # Run ESLint
 ```
+
+No test suite exists in this project.
 
 ## Architecture
 
 ### Routing & Layout
-- Uses Next.js App Router with file-based routing in `app/` directory
-- Root layout (`app/layout.tsx`) includes Header and Footer on all pages
-- All pages are wrapped in a consistent layout with sticky header and global styles
+- App Router with file-based routing in `app/`
+- `app/layout.tsx` wraps all pages with `Header` and `Footer`
+- Page routes: `/`, `/about`, `/mission`, `/blogs`, `/news`, `/summer-camp`, `/resources`, `/admin`
+
+### Content Management (Markdown + Decap CMS)
+Blog posts and news articles are stored as Markdown files with frontmatter:
+
+```
+content/
+  blogs/   ← .md files for blog posts
+  news/    ← .md files for news articles
+```
+
+**Frontmatter schema** (blogs): `title`, `date` (YYYY-MM-DD), `excerpt`, `image`, `author`, `body`  
+**Frontmatter schema** (news): same but `date` is optional
+
+`lib/markdown.ts` exports three functions used by page components:
+- `getAllPosts(collection)` — reads all `.md` files, returns sorted `PostMeta[]`
+- `getPostBySlug(collection, slug)` — reads one file, returns `Post` with rendered HTML
+- `getAllSlugs(collection)` — used by `generateStaticParams()` for static generation
+
+Both `app/blogs/[slug]/page.tsx` and `app/news/[slug]/page.tsx` use `generateStaticParams()` for static generation at build time.
+
+To add new content: create a `.md` file in `content/blogs/` or `content/news/`. The filename becomes the URL slug.
+
+### Decap CMS (`/admin`)
+`app/admin/page.tsx` loads Decap CMS via CDN and initializes it with manual config. The CMS writes directly to the GitHub repo (`samvrit-rao/stemforu-rebuild`, `main` branch) via the GitHub backend.
+
+**OAuth flow** for CMS authentication:
+- `app/api/auth/route.ts` — redirects to GitHub OAuth with `OAUTH_GITHUB_CLIENT_ID`
+- `app/api/callback/route.ts` — exchanges code for token using `OAUTH_GITHUB_CLIENT_SECRET`, posts result back to CMS window via `postMessage`
+
+Required environment variables:
+```
+OAUTH_GITHUB_CLIENT_ID=
+OAUTH_GITHUB_CLIENT_SECRET=
+```
+
+The `/admin` page hides the site header/footer via DOM manipulation so Decap CMS has full control of the viewport.
+
+### Images
+- Uploaded images go to `public/images/uploads/` (configured as `media_folder` in Decap CMS)
+- Reference them as `/images/uploads/filename.jpg`
+- Static assets used by pages are in `public/` and `assets/`; prefer `public/` for Next.js Image optimization
 
 ### Font System
-The application uses a custom font configuration defined in `app/layout.tsx`:
-- `--font-inter`: Default sans-serif (body text)
-- `--font-dm`: DM Sans for headings (`font-heading`)
-- `--font-poppins`: Display font (`font-display`)
-- `--font-sora`: Logo font (`font-logo`)
+Configured in `app/layout.tsx` and `tailwind.config.ts` via CSS variables:
+- `--font-inter` → `font-sans` (body)
+- `--font-dm` → `font-heading` (headings, DM Sans)
+- `--font-poppins` → `font-display`
+- `--font-sora` → `font-logo`
 
-These are configured in `tailwind.config.ts` and applied via CSS variables.
-
-### Styling Approach
-- Tailwind CSS with custom color palette based on cyan/primary colors
-- Custom utility classes in `app/globals.css`:
-  - `.gradient-text`: Animated gradient text effect
-  - `.glass-effect`: Glassmorphism backdrop blur
-  - `.animate-float`, `.animate-slide-up`, `.animate-fade-in`: Custom animations
-- Custom scrollbar styling with gradient
-- Mobile-first responsive design
-
-### Components Structure
-
-**Header** (`components/Header.tsx`):
-- Client component (`'use client'`) with interactive state
-- Sticky navigation with glassmorphism effect
-- Desktop: horizontal nav with dropdown menu for Content (Blogs/News/Resources)
-- Mobile: hamburger menu with full-width links
-- Uses teal-600 as accent color for CTAs
-
-**Footer** (`components/Footer.tsx`):
-- Contains site links and social information
-- Consistent across all pages
-
-**BackgroundSlideshow** (`components/BackgroundSlideshow.tsx`):
-- Used for visual backgrounds on certain pages
-
-### Content Management
-
-**Blog Posts** are managed in `app/blogs/page.tsx`:
-- Array of blog post objects with metadata (id, title, date, excerpt, slug, image)
-- Individual blog posts are in `app/blogs/[slug]/page.tsx`
-- To add new blog: add entry to array and create corresponding page file
-
-**News Articles** follow same pattern in `app/news/page.tsx`
-
-**Summer Camp** page (`app/summer-camp/page.tsx`) shows programs from 2021-2024
-
-**Assets**: Static images are in `assets/` directory but should be placed in `public/` for Next.js Image optimization
-
-### Page Routes
-- `/` - Homepage with hero, mission, resources preview
-- `/about` - Founder biography, awards, publications
-- `/mission` - Organization mission and participation
-- `/blogs` - Blog listing and individual posts
-- `/news` - Science news articles
-- `/summer-camp` - Summer camp programs
-- `/resources` - External learning resources
-
-## Styling Conventions
-
-### Color Palette
-- Primary: cyan/blue scale (50-900) defined in `tailwind.config.ts`
-- Accent: teal-600 for CTAs and branding
-- Use `primary-600` for main interactive elements
-- Use `primary-50` for hover backgrounds
-
-### Typography Classes
-- Headings: Use `font-heading` (DM Sans)
-- Logo/brand: Use `font-logo` (Sora)
-- Display text: Use `font-display` (Poppins)
-- Body: Default `font-sans` (Inter)
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints: `md:` (768px+) for desktop layouts
-- Mobile menu toggles at `md` breakpoint
-
-## Important Notes
-
-- All components using interactivity (useState, event handlers) must include `'use client'` directive
-- Images should be placed in `public/` directory and referenced with `/image-name.jpg`
-- The site uses Next.js Image component for optimization
-- Navigation color scheme: teal accent for branding, primary (cyan) for content links
-- Header has a glass effect with backdrop blur and sticky positioning
+### Styling
+- Custom utility classes in `app/globals.css`: `.gradient-text`, `.glass-effect`, `.animate-float`, `.animate-slide-up`, `.animate-fade-in`
+- Color palette: `primary-*` (cyan scale) defined in `tailwind.config.ts`; use `primary-600` for interactive elements, `teal-600` for CTAs
+- All client-interactive components require `'use client'` directive
