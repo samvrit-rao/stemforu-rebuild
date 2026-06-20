@@ -4,7 +4,9 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false)
 
   return (
     <header className="glass-effect sticky top-0 z-50 shadow-lg backdrop-blur-xl">
@@ -20,9 +22,38 @@ export default function Header() {
             <Link href="/" className="text-gray-700 font-semibold hover:text-primary-600 transition-all px-3 py-2 rounded-lg hover:bg-primary-50 font-heading">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 font-semibold hover:text-primary-600 transition-all px-3 py-2 rounded-lg hover:bg-primary-50 font-heading">
-              About
-            </Link>
+            {/* Dropdown for About */}
+            <div className="relative group" onMouseLeave={() => setIsAboutDropdownOpen(false)}>
+              <button
+                className="text-gray-700 font-semibold hover:text-primary-600 transition-all px-3 py-2 rounded-lg hover:bg-primary-50 font-heading flex items-center gap-1"
+                onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              >
+                About
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isAboutDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 w-48 pt-2"
+                  onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                  onMouseLeave={() => setIsAboutDropdownOpen(false)}
+                >
+                <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                  <Link href="/about" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-heading">
+                    Samvrit Rao
+                  </Link>
+                  <Link href="/about/meha-seshan" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-heading">
+                    Meha Seshan
+                  </Link>
+                  <Link href="/about/shreya-seshan" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-heading">
+                    Shreya Seshan
+                  </Link>
+                </div>
+                </div>
+              )}
+            </div>
             <Link href="/mission" className="text-gray-700 font-semibold hover:text-primary-600 transition-all px-3 py-2 rounded-lg hover:bg-primary-50 font-heading">
               Mission
             </Link>
@@ -90,13 +121,40 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <button
+              className="w-full text-left text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading flex items-center justify-between"
+              onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
             >
               About
-            </Link>
+              <svg className={`w-4 h-4 transition-transform ${isMobileAboutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isMobileAboutOpen && (
+              <div className="ml-4 space-y-1">
+                <Link
+                  href="/about"
+                  className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Samvrit Rao
+                </Link>
+                <Link
+                  href="/about/meha-seshan"
+                  className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Meha Seshan
+                </Link>
+                <Link
+                  href="/about/shreya-seshan"
+                  className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Shreya Seshan
+                </Link>
+              </div>
+            )}
             <Link
               href="/mission"
               className="block text-gray-700 font-semibold hover:text-teal-600 transition-all px-3 py-2 rounded-lg hover:bg-teal-50 font-heading"
