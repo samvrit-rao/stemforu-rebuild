@@ -17,7 +17,7 @@ export default function MehaSeshan() {
           <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
             <div className="md:w-2/5">
               <Image
-                src="/meha-seshan.png"
+                src="/meha-seshan.jpg"
                 alt="Meha Seshan - Program Director of STEMForU"
                 width={500}
                 height={600}
