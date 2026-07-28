@@ -50,6 +50,9 @@ export default function Header() {
                   <Link href="/about/shreya-seshan" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-heading">
                     Shreya Seshan
                   </Link>
+                  <Link href="/about/aneruddha-das" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 font-heading">
+                    Aneruddha Das
+                  </Link>
                 </div>
                 </div>
               )}
